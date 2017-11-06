@@ -73,29 +73,29 @@ Se ha capturado una sesión SIP (archivo sip.cap.gz), que se puede abrir con Wir
 
 11. Una vez conectado, estudia el intercambio de tramas.
  ** ¿Qué protocolo(s) se utiliza(n)? ¿Para qué sirven estos protocolos? RTP, para realizar llamadas multimedia en tiempo real. H.261 para enviar imágenes
- ** ¿Cuál es el tamaño de paquete de los mismos? Los de RTP son 214 bytes
+ ** ¿Cuál es el tamaño de paquete de los mismos? Los de RTP son 160 bytes
  ** ¿Se utilizan bits de padding? No
- ** ¿Cuál es la periodicidad de los paquetes que se envían? Cada 160
- ** ¿Cuántos bits/segundo estamos enviando?
+ ** ¿Cuál es la periodicidad de los paquetes que se envían? 0.02
+ ** ¿Cuántos bits/segundo estamos enviando? 64k/s
 
 
 
 [Al terminar el ejercicio es recomendable hacer commit de los ficheros modificados]
 
 12. Vamos a ver más a fondo el intercambio RTP. En Telephony hay una opción RTP. Empecemos mirando los flujos RTP.
- ** ¿Cuántos flujos hay? ¿por qué?
- ** ¿Cuántos paquetes se pierden?
- ** ¿Cuál es el valor máximo del delta? ¿Y qué es lo que significa el valor de delta?
- ** ¿Cuáles son los valores de jitter (medio y máximo)? ¿Qué quiere decir eso? ¿Estamos ante una conversación de calidad?
+ ** ¿Cuántos flujos hay? ¿por qué? 2, uno es de audio y otro de video
+ ** ¿Cuántos paquetes se pierden? 0
+ ** ¿Cuál es el valor máximo del delta? ¿Y qué es lo que significa el valor de delta? 1290.479 y 1290.44 delta es el tiempo entre paquetes
+ ** ¿Cuáles son los valores de jitter (medio y máximo)? ¿Qué quiere decir eso? ¿Estamos ante una conversación de calidad? En el primer flujo: Max jitter 183.096, mean 153.240. En el segund max:119.635, mean:42.5 quiere decir que de media los paquetes están llegando 42 ms de diferencia respecto al tiempo en el que tendría que llegar
 
 
 13. Elige un paquete RTP de audio. Analiza el flujo de audio en Telephony -> RTP -> Stream Analysis.
- ** ¿Cuánto valen el delta y el jitter para el primer paquete que ha llegado?
- ** ¿Podemos saber si éste es el primer paquete que nos han enviado?
- ** Los valores de jitter son menores de 10ms hasta un paquete dado. ¿Cuál?
- ** ¿A qué se debe el cambio tan brusco del jitter?
- ** ¿Es comparable este cambio con el tiempo desde la recepción del paquete anterior? ¿Por qué?
- ** ¿Cuál es la dependencia entre el tiempo transcurrido desde el paquete anterior y el valor de jitter?
+ ** ¿Cuánto valen el delta y el jitter para el primer paquete que ha llegado? 0
+ ** ¿Podemos saber si éste es el primer paquete que nos han enviado? Es UDP no podemos estar seguros de que no se pierda el primer mensaje
+ ** Los valores de jitter son menores de 10ms hasta un paquete dado. ¿Cuál? El 247
+ ** ¿A qué se debe el cambio tan brusco del jitter? A un retraso en la red, el aumento del delta sube la media del jitter
+ ** ¿Es comparable este cambio con el tiempo desde la recepción del paquete anterior? ¿Por qué? No, el jitter es una media, mientras que el retraso es una medida puntual
+ ** ¿Cuál es la dependencia entre el tiempo transcurrido desde el paquete anterior y el valor de jitter? El delta es la desviación mientras que el jitter es la media de deltas(desviación típica)
 
 
 14. En Telephony selecciona el menú VoIP calls. Verás que se lista la llamada de voz IP capturada en una ventana emergente. Selecciona esa llamada y pulsa el botón Graph.
