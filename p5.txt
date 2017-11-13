@@ -133,9 +133,9 @@ Captura una sesión SIP de una conversación con el número SIP sip:9999@qxip.ne
 18. Identifica las diferencias existentes entre esta conversación y la conversación anterior:
  ** ¿Cuántos flujos tenemos? 4
  ** ¿Cuál es su periodicidad? 
- ** ¿Cuánto es el valor máximo del delta y los valores medios y máximo del jitter?
- ** ¿Podrías reproducir la conversación desde Wireshark? ¿Cómo? Comprueba que poniendo un valor demasiado pequeño para el buffer de jitter, la conversación puede no tener la calidad necesaria.
- ** ¿Sabrías decir qué tipo de servicio ofrece sip:9999@qxip.net?
+ ** ¿Cuánto es el valor máximo del delta y los valores medios y máximo del jitter? 49.97 13.626, 13.109
+ ** ¿Podrías reproducir la conversación desde Wireshark? ¿Cómo? Comprueba que poniendo un valor demasiado pequeño para el buffer de jitter, la conversación puede no tener la calidad necesaria. No funciona
+ ** ¿Sabrías decir qué tipo de servicio ofrece sip:9999@qxip.net?No existe
 
 
 
