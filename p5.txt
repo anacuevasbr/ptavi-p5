@@ -126,8 +126,8 @@ Captura de una sesión SIP
 Captura una sesión SIP de una conversación con el número SIP sip:9999@qxip.net. Tendrás que dar de alta una cuenta en www.ekiga.net con el navegador. Recuerda también que has de comenzar a capturar tramas antes de arrancar Ekiga para ver todo el proceso en el que participa SIP. Para realizar los siguientes ejercicios, deberás crearte una cuenta en ekiga.net y darte de alta la lanzar la aplicación.
 
 17. Observa las diferencias en el inicio de la conversación entre el entorno del laboratorio y el del ejercicio anterior:
- ** ¿Es necesario el uso de DNS y STUN? ¿Por qué? Si, para averiguar la direccion de ekiga
- ** ¿Son diferentes el registro y la descripción de la sesión? Si
+ ** ¿Es necesario el uso de DNS y STUN? ¿Por qué? Si, para averiguar la direccion de ekiga y stun para el tipo de dns
+ ** ¿Son diferentes el registro y la descripción de la sesión? Si, la descripcion de la sesion se hace en el invite
 
 
 18. Identifica las diferencias existentes entre esta conversación y la conversación anterior:
@@ -148,3 +148,4 @@ Captura una sesión SIP de una conversación con el número SIP sip:9999@qxip.ne
 [Al terminar la práctica, realiza un push para sincronizar tu repositorio GitHub]
 
 [Recuerda mirar el guión para ver las instrucciones de entrega]
+
